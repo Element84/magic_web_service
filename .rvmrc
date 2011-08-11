@@ -1,0 +1,12 @@
+export JRUBY_OPTS="--1.9"
+
+rvm_gemset_create_on_use_flag=1
+rvm_project_rvmrc_default=1
+rvm_install_on_use_flag=1
+
+rvm jruby-1.6.3@magic_webservice
+
+if [ ! -d "$GEM_HOME/gems/bundler-"* ]; then
+  gem install bundler --no-rdoc --no-ri
+fi
+
