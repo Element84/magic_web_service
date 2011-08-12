@@ -1,0 +1,5 @@
+/pkg
+/.bundle
+/bin
+/generated
+/lib/*.jar

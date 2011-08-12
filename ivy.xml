@@ -1,0 +1,39 @@
+<ivy-module version="2.0">
+  <info organisation="myorg" module="magic_webservice"/>
+  <dependencies>
+    <dependency org="org.springframework.ws" name="spring-ws-core" rev="2.0.2.RELEASE"/>
+    <dependency org="org.springframework.ws" name="spring-ws-support" rev="2.0.2.RELEASE"/>
+    <dependency org="org.springframework" name="spring-oxm" rev="3.0.5.RELEASE"/>
+    <exclude module="activation"/>
+    <exclude module="aopalliance"/>
+    <exclude module="axiom-api"/>
+    <exclude module="axiom-impl"/>
+    <exclude module="commons-codec"/>
+    <exclude module="commons-httpclient"/>
+    <exclude module="jaxen"/>
+    <exclude module="jaxb-api"/>
+    <exclude module="jaxb-impl"/>
+    <exclude module="jms"/>
+    <exclude module="jdom"/>
+    <exclude module="dom4j"/>
+    <exclude module="ejb"/>
+    <exclude module="smack"/>
+    <exclude module="mail"/>
+    <exclude module="jibx-run"/>
+    <exclude module="stax-api"/>
+    <exclude module="servlet-api"/>
+    <exclude module="xmlbeans"/>
+    <exclude module="xpp3_min"/>
+    <exclude module="xstream"/>
+    <exclude module="xom"/>
+    <exclude module="castor"/>
+    <exclude module="spring-aop"/>
+    <exclude module="spring-asm"/>
+    <exclude module="spring-expression"/>
+    <exclude module="spring-jms"/>
+    <exclude module="spring-tx"/>
+    <exclude module="spring-web"/>
+    <exclude module="spring-webmvc"/>
+    <exclude module="wsdl4j"/>
+  </dependencies>
+</ivy-module>
