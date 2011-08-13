@@ -4,6 +4,8 @@
     <dependency org="org.springframework.ws" name="spring-ws-core" rev="2.0.2.RELEASE"/>
     <dependency org="org.springframework.ws" name="spring-ws-support" rev="2.0.2.RELEASE"/>
     <dependency org="org.springframework" name="spring-oxm" rev="3.0.5.RELEASE"/>
+
+    <!-- A whole bunch of dependencies we don't need -->
     <exclude module="activation"/>
     <exclude module="aopalliance"/>
     <exclude module="axiom-api"/>

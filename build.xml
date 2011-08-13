@@ -1,30 +1,33 @@
 <project name="magic_webservice"  xmlns:ivy="antlib:org.apache.ivy.ant" default="build-jar">
 
- 
-  <property name="lib.dir" value="${basedir}/lib" />
-
   <target name="-init">
     <mkdir dir="bin" />
     <mkdir dir="generated" />
+    <mkdir dir="jars" />
   </target>
 
   <target name="clean">
     <delete dir="bin" />
     <delete dir="generated" />
-    <delete>
-      <fileset dir="lib" includes="*.jar"/>
-    </delete>
+    <delete dir="jars" />
   </target>
 
-  <target name="resolve" description="--> retrieve dependencies with ivy">
+  <target name="resolve" description="retrieves dependencies with ivy">
+    <!-- 
+      Put the jar files in another directory to avoid cluttering the lib directory
+    -->
+    <property name="ivy.lib.dir" value="jars"/>
+    <!-- 
+      Download the spring dependencies using Ivy. 
+    -->
     <ivy:retrieve />
   </target>
 
-  <target name="build-jar" depends="compile-jaxb-code">
-    <jar jarfile="lib/echo_ws.jar" basedir="bin"/>
+  <target name="build-jar" depends="compile-jaxb-code" description="Builds a jar from compiled jaxb code">
+    <jar jarfile="jars/echo_ws.jar" basedir="bin"/>
   </target>
 
-  <target name="compile-jaxb-code" depends="generate-jaxb-code">
+  <target name="compile-jaxb-code" depends="generate-jaxb-code" description="Compiles the generated jaxb code">
     <javac destdir="bin">
       <src>
         <pathelement location="generated" />
@@ -32,25 +35,13 @@
     </javac>
   </target>
 
-<!--
-  <macrodef name="generate-jaxb-service-code">
-    <attribute name="service" />
-    <attribute name="package" />
-    <sequential>
-      <property name="url.base" value="https://api.echo.nasa.gov/echo-wsdl/v10/" />
-      <java classname="com.sun.tools.internal.xjc.XJCFacade">
-        <arg line="-p @{package}" />
-        <arg value="${url.base}@{service}Messages.xsd" />
-      </java>
-    </sequential>
-  </macrodef>
--->
-  <target name="generate-jaxb-code" depends="-init">
+  <target name="generate-jaxb-code" depends="-init" description="Generates JAXB classes from a web service XML schema">
     <java classname="com.sun.tools.internal.xjc.XJCFacade">
       <arg line="-p authentication" />
       <arg line="-d generated" />
       <arg value="https://api.echo.nasa.gov/echo-wsdl/v10/AuthenticationServiceMessages.xsd" />
     </java>
   </target>
+
 </project>
 
