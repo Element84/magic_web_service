@@ -21,7 +21,7 @@ java_import("org.springframework.oxm.jaxb.Jaxb2Marshaller")
 java_import("org.springframework.ws.soap.saaj.SaajSoapMessageFactory")
 java_import("org.springframework.ws.client.core.WebServiceTemplate")
 
-# Require the generated JAXB classes.
+# Require the generated and compiled JAXB code to talk to the ECHO API..
 # This is built from the command line
 # Run "ant" in the magic_webservice directory
 require 'echo_ws.jar'
