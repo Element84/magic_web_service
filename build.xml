@@ -1,4 +1,4 @@
-<project name="magic_webservice"  xmlns:ivy="antlib:org.apache.ivy.ant" default="build-jar">
+<project name="magic_web_service"  xmlns:ivy="antlib:org.apache.ivy.ant" default="build-jar">
 
   <target name="-init">
     <mkdir dir="bin" />

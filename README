@@ -1,4 +1,4 @@
-magic_webservice is a project written to show off the capabilities of JRuby calling existing Java code. It demonstrates using JRuby to invoke a SOAP web service using the Spring Web Services and JAXB Java libraries.
+magic_web_service is a project written to show off the capabilities of JRuby calling existing Java code. It demonstrates using JRuby to invoke a SOAP web service using the Spring Web Services and JAXB Java libraries.
 
 Project files:
  * lib

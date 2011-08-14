@@ -23,7 +23,7 @@ java_import("org.springframework.ws.client.core.WebServiceTemplate")
 
 # Require the generated and compiled JAXB code to talk to the ECHO API..
 # This is built from the command line
-# Run "ant" in the magic_webservice directory
+# Run "rake" in the magic_web_service directory
 require 'echo_ws.jar'
 
 # Make generated JAXB classes available within a Ws module.

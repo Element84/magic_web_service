@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-  <info organisation="myorg" module="magic_webservice"/>
+  <info organisation="myorg" module="magic_web_service"/>
   <dependencies>
     <dependency org="org.springframework.ws" name="spring-ws-core" rev="2.0.2.RELEASE"/>
     <dependency org="org.springframework.ws" name="spring-ws-support" rev="2.0.2.RELEASE"/>
