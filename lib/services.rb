@@ -2,7 +2,7 @@ require 'magic_web_service'
 
 # Defines methods that can be used to return the different services defined on a web service API
 module Services
-  # An arry of the different services that will be defined on an including class.
+  # An array of the different services that will be defined on an including class.
   SERVICES = [:authentication]
 
   SERVICE_HASH = SERVICES.inject({}) do |hash, service|

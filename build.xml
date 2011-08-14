@@ -27,7 +27,7 @@
     <jar jarfile="jars/echo_ws.jar" basedir="bin"/>
   </target>
 
-  <target name="compile-jaxb-code" depends="generate-jaxb-code" description="Compiles the generated jaxb code">
+  <target name="compile-jaxb-code" depends="resolve,generate-jaxb-code" description="Compiles the generated jaxb code">
     <javac destdir="bin">
       <src>
         <pathelement location="generated" />

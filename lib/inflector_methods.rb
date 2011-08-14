@@ -2,7 +2,8 @@
 # This avoids dependencies on other gems
 
 String.class_eval do 
-  #Converts strings in snake case to camel case
+
+  # Converts strings in snake case to camel case
   def camelize
     split("_").map do |word|
       m = /(.)(.*)/.match(word)
@@ -10,6 +11,7 @@ String.class_eval do
     end.join
   end
 
+  # Converts strings in camel case to snake case
   def underscore
     started = false
     split(/([A-Z])/).inject([]) do |parts, word|

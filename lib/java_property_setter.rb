@@ -1,20 +1,28 @@
+
+# Makes the JAXB Java annotation classes available.
 module JaxbAnnotation
   include_package "javax.xml.bind.annotation"
 end
 
+# Allows the properties to be set on a JAXB Java object from an array of properties or
+# another object with the same properties
 class JavaPropertySetter
 
+  # Created with the Java object
   def initialize(java_obj)
     @java_object = java_obj
     initialize_property_names_to_types
   end
 
+  # Sets the properties on the Java object from an array of values.  The array order
+  # must match the order of the elements defined in the XML schema.
   def set_properties_from_array(properties)
     @property_names_to_types.keys.zip(properties).each do |name, value|
       set_value(name, value)
     end
   end
 
+  # Sets the properties on the Java object using an object that has the same properties.
   def set_properties_from_object(object)
     @property_names_to_types.keys.each do |name|
       set_value(name, object.send(name))
@@ -34,10 +42,11 @@ class JavaPropertySetter
 
     case property_type
     when "java.lang.String"
+      # Ruby strings need no conversion to Java strings.
       value
     else
       if property_type.start_with? "authentication."
-        # This type starts our package for generated jaxb types
+        # This type starts our package for generated JAXB types.
         # It's a complex object.
         property_type_class = Ws.const_get(property_type.split(".").last)
         new_obj = property_type_class.new
@@ -49,6 +58,7 @@ class JavaPropertySetter
     end
   end
 
+  # Initializes a hash mapping property names to property types.
   def initialize_property_names_to_types
     @property_names_to_types = {}
     java_obj_class = @java_object.class.java_class

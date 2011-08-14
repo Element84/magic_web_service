@@ -2,8 +2,11 @@ require 'java_dependencies'
 require 'inflector_methods'
 require 'java_property_setter'
 
+# The MagicWebService responds to operation calls using method_missing.  It converts the method
+# name called and arguments into the correct request object and invokes the SOAP operation.
 class MagicWebService
 
+  # Initializes the Spring objects need to make web service requests.
   def initialize(service_name)
     marshaller = Jaxb2Marshaller.new
     marshaller.context_paths = "authentication"
@@ -19,6 +22,9 @@ class MagicWebService
     @service_template.default_uri = "https://api.echo.nasa.gov/echo-v10/#{service_name.to_s.camelize}ServicePortImpl"
   end
 
+  # Handles all web service operation requests.  Converts the method name into a JAXB request
+  # object.  Sets the arguments on the JAXB request object and then invokes the web service
+  # operation.
   def method_missing(name, *args)
     jaxb_request_class = Ws.const_get(name.to_s.camelize)
     request = jaxb_request_class.new

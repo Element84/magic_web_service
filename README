@@ -1,0 +1,31 @@
+magic_webservice is a project written to show off the capabilities of JRuby calling existing Java code. It demonstrates using JRuby to invoke a SOAP web service using the Spring Web Services and JAXB Java libraries.
+
+Project files:
+ * lib
+   * demo_direct_scripting.rb - demonstrates basic JRuby scripting to make web service requests with Spring Web Services and generated JAXB objects.
+   * demo_magic_web_service.rb - demonstrates using the MagicWebService to make web service requests.  The MagicWebService class and Services module demonstrate some Ruby metaprogramming techniques.
+   * inflector_methods.rb - String utility methods.
+   * java_dependencies.rb - Requires all the Java dependencies.
+   * java_property_setter.rb - Uses Java reflection to set properties on a generated JAXB Java object.
+   * magic_web_service.rb - allows web service methods to be invoked.
+   * services.rb - A module that provides service methods that return MagicWebService instances available.
+
+
+Prerequisites:
+ * Java and Ant are installed.
+   * These are usually installed by default on Mac OSX if you have XCode installed.
+ * JRuby is installed. 
+   * RVM is the easiest way if you have RVM installed already. http://beginrescueend.com/
+   * Otherwise JRuby can be downloaded here: http://www.jruby.org/download
+
+Running the Demos:
+ 1. Make sure you meet the prerequisites.
+ 2. cd magic_web_service
+ 3. rake - This will install ivy (http://ant.apache.org/ivy/), download the Java dependencies, generate the JAXB Java code, and compile it.
+
+rake demo_direct_scripting
+This will run the direct scripting demo located in lib/demo_direct_scripting.rb.
+
+rake demo_magic_web_service
+This will run the MagicWebService demo located in lib/demo_magic_web_service.rb
+
