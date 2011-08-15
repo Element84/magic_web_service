@@ -39,7 +39,7 @@
     <java classname="com.sun.tools.internal.xjc.XJCFacade">
       <arg line="-p authentication" />
       <arg line="-d generated" />
-      <arg value="https://api.echo.nasa.gov/echo-wsdl/v10/AuthenticationServiceMessages.xsd" />
+      <arg value="https://testbed.echo.nasa.gov/echo-wsdl/v10/AuthenticationServiceMessages.xsd" />
     </java>
   </target>
 

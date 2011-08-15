@@ -5,9 +5,9 @@ require 'java_dependencies'
 
 # We'll make a web service call to the NASA ECHO SOAP API as an example.
 # ECHO (http://www.echo.nasa.gov) is an earth science metadata repository that has a SOAP API.  It's
-# SOAP API is documented here: https://api.echo.nasa.gov/echo/apis.html  We'll use the SOAP API
+# SOAP API is documented here: https://testbed.echo.nasa.gov/echo/apis.html  We'll use the SOAP API
 # to login as a guest.  
-# Login documentation: https://api.echo.nasa.gov/echo/ws/v10/AuthenticationService.html#Login
+# Login documentation: https://testbed.echo.nasa.gov/echo/ws/v10/AuthenticationService.html#Login
 
 # 0. Setup the Spring WS classes
 marshaller = Jaxb2Marshaller.new
@@ -21,7 +21,7 @@ message_factory.after_properties_set
 service_template = WebServiceTemplate.new(message_factory)
 service_template.marshaller = marshaller
 service_template.unmarshaller = marshaller
-service_template.default_uri = "https://api.echo.nasa.gov/echo-v10/AuthenticationServicePortImpl"
+service_template.default_uri = "https://testbed.echo.nasa.gov/echo-v10/AuthenticationServicePortImpl"
 
 
 # 1. Create the JAXB request object

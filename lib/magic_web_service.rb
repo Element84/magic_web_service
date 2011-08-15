@@ -19,7 +19,7 @@ class MagicWebService
     @service_template = WebServiceTemplate.new(message_factory)
     @service_template.marshaller = marshaller
     @service_template.unmarshaller = marshaller
-    @service_template.default_uri = "https://api.echo.nasa.gov/echo-v10/#{service_name.to_s.camelize}ServicePortImpl"
+    @service_template.default_uri = "https://testbed.echo.nasa.gov/echo-v10/#{service_name.to_s.camelize}ServicePortImpl"
   end
 
   # Handles all web service operation requests.  Converts the method name into a JAXB request
