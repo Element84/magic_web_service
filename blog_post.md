@@ -1,7 +1,7 @@
 JRuby and Metaprogramming with Java
 ===================================
 
-JRubyConf 2011 was two weeks ago on August 3rd and 4th where I gave a talk entitled "Building the Magic Web Service".  My presentation covered how the NASA ECHO developers built a Ruby gem using existing Java libraries to make SOAP web service requests.  One of the topics my talk covered was the use of metaprogramming in JRuby with Java objects.  I'm going to detail more of those metaprogramming techniques in this blog.  Before diving in you should check out the magic_web_service project on Github at (TODO POST PROJECT TO GITHUB).  It's not the actual code used on our project but it demonstrates the metaprogramming techniques detailed in this article.  
+JRubyConf 2011 was two weeks ago on August 3rd and 4th where I gave a talk entitled "Building the Magic Web Service".  My presentation covered how the NASA ECHO developers built a Ruby gem using existing Java libraries to make SOAP web service requests.  One of the topics my talk covered was the use of metaprogramming in JRuby with Java objects.  I'm going to detail more of those metaprogramming techniques in this blog.  Before diving in you should check out the magic_web_service project on Github at <https://github.com/Element84/magic_web_service>.  It's not the actual code used on our project but it demonstrates the metaprogramming techniques detailed in this article.  
 
 The SOAP API
 ------------
@@ -199,7 +199,7 @@ JRuby provides great benefits to developers coming to it from Ruby or from tradi
 Resources
 ---------
 * JRuby Wiki - <https://github.com/jruby/jruby/wiki>
-* magic_web_service Github - TODO POST on github and get link
+* magic_web_service Github - <https://github.com/Element84/magic_web_service>
 * NASA ECHO SOAP API  - <https://api.echo.nasa.gov/echo/ws/v10/index.html>
 * Spring Web Services - <http://static.springsource.org/spring-ws/sites/2.0/>
 * JAXB - <http://jaxb.java.net/>
