@@ -15,7 +15,7 @@ class DemoMagicWebService
     client_info.client_id = "magic web service"
     client_info.user_ip_address = "127.0.0.1"
 
-    # authentication_service is a method add by Services module. It returns an instance of
+    # authentication_service is a method added by the Services module. It returns an instance of
     # the MagicWebService.  The call to login is handled by method_missing on MagicWebService.
     token = authentication_service.login("guest", "mypassword", client_info)
     puts "Logged in with token #{token}"
